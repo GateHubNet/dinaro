@@ -1,0 +1,142 @@
+/* ── Design tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-primary:      #044352;
+  --color-primary-dark: #052931;
+  --color-text:         #12141d;
+  --color-white:        #ffffff;
+
+  /* Shadows */
+  --shadow-card: 0px 16px 56px 0px rgba(0, 0, 0, 0.05);
+  --shadow-cta:  0px 12px 24px 0px rgba(4, 67, 82, 0.3);
+
+  /* Border radius */
+  --radius-sm:      8px;
+  --radius-card:    16px;
+  --radius-section: 24px;
+  --radius-pill:    40px;
+
+  /* Typography */
+  --font-inter:      'Inter', sans-serif;
+  --font-dm-sans:    'DM Sans', sans-serif;
+  --font-roboto-mono:'Roboto Mono', monospace;
+
+  /* Layout */
+  --canvas-width:  1728px;
+  --page-gutter:   252px;
+  --section-gap:   24px;
+
+  /* Easing */
+  --easing: cubic-bezier(0.290, 0.435, 0.295, 1.000);
+
+  /* Breakpoints (reference — match useBreakpoint.js) */
+  /* mobile:  <= 768px  */
+  /* tablet:  <= 1024px */
+  /* desktop: >  1024px */
+}
+
+/* ── Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-width: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────── */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: inherit;
+  transition: transform 0.35s var(--easing);
+  transform-origin: center;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Common card style ─────────────────────────────────────────────── */
+.card {
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Terms & Conditions HTML content styles ──────────────────────── */
+.terms-content p { margin-bottom: 12px; }
+.terms-content h1,
+.terms-content h2,
+.terms-content h3,
+.terms-content h4 {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.terms-content h1 { font-size: 22px; }
+.terms-content h2 { font-size: 18px; }
+.terms-content h3,
+.terms-content h4 { font-size: 16px; }
+.terms-content ul,
+.terms-content ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+.terms-content li { margin-bottom: 4px; }
+.terms-content strong { color: rgba(0, 0, 0, 0.85); font-weight: 600; }
+.terms-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.terms-content th {
+  background: var(--color-primary);
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.terms-content td {
+  padding: 8px 12px;
+  border: 1px solid rgba(4, 67, 82, 0.15);
+  vertical-align: top;
+}
+.terms-content tr:nth-child(even) td { background: rgba(4, 67, 82, 0.03); }
+.terms-content caption {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 6px;
+  text-align: left;
+}

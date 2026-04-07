@@ -1,0 +1,97 @@
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'motion/react';
+import PageTransition from './components/PageTransition';
+
+const CANVAS_WIDTH = 1728;
+const DESKTOP_MIN = 1025;
+
+function useViewportScale() {
+	useEffect(() => {
+		function applyScale() {
+			if (window.innerWidth >= DESKTOP_MIN) {
+				const scale = Math.min(1, window.innerWidth / CANVAS_WIDTH);
+				document.documentElement.style.zoom = String(scale);
+			} else {
+				document.documentElement.style.zoom = '1';
+			}
+		}
+		applyScale();
+		window.addEventListener('resize', applyScale);
+		return () => window.removeEventListener('resize', applyScale);
+	}, []);
+}
+
+const Homepage           = lazy(() => import('./pages/Homepage'));
+const Individuals        = lazy(() => import('./pages/Individuals'));
+const BusinessAccount    = lazy(() => import('./pages/BusinessAccount'));
+const IndividualDebitCard = lazy(() => import('./pages/IndividualDebitCard'));
+const BusinessDebitCard  = lazy(() => import('./pages/BusinessDebitCard'));
+const EMT                = lazy(() => import('./pages/EMT'));
+const AcquiringECommerce = lazy(() => import('./pages/AcquiringECommerce'));
+const BankingAPI         = lazy(() => import('./pages/BankingAPI'));
+const CardsAPI           = lazy(() => import('./pages/CardsAPI'));
+const Company            = lazy(() => import('./pages/Company'));
+const Contact            = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy      = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions    = lazy(() => import('./pages/TermsConditions'));
+const Complaints         = lazy(() => import('./pages/Complaints'));
+const PaymentModules          = lazy(() => import('./pages/PaymentModules'));
+const WhitelabelOnboarding   = lazy(() => import('./pages/WhitelabelOnboarding'));
+const WhitelabelRamp         = lazy(() => import('./pages/WhitelabelRamp'));
+const WhitelabelCustom       = lazy(() => import('./pages/WhitelabelCustom'));
+const NotFound                = lazy(() => import('./pages/NotFound'));
+
+function PageLoader() {
+	return (
+		<div style={{
+			display: 'flex', opacity: 0, alignItems: 'center', justifyContent: 'center',
+			minHeight: '100vh', fontFamily: "'Inter', sans-serif",
+		}}>
+			<div style={{
+				width: 40, height: 40, border: '3px solid rgba(4,67,82,0.15)',
+				borderTopColor: '#044352', borderRadius: '50%',
+				animation: 'spin 0.7s linear infinite',
+			}} />
+			<style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+		</div>
+	);
+}
+
+function AnimatedRoutes() {
+	const location = useLocation();
+	return (
+		<AnimatePresence mode="wait">
+			<Routes location={location} key={location.pathname}>
+				<Route path="/" element={<PageTransition><Homepage /></PageTransition>} />
+				<Route path="/products/individuals" element={<PageTransition><Individuals /></PageTransition>} />
+				<Route path="/products/business-account" element={<PageTransition><BusinessAccount /></PageTransition>} />
+				<Route path="/products/debit-cards/individual" element={<PageTransition><IndividualDebitCard /></PageTransition>} />
+				<Route path="/products/debit-cards/business" element={<PageTransition><BusinessDebitCard /></PageTransition>} />
+				<Route path="/products/emt" element={<PageTransition><EMT /></PageTransition>} />
+				<Route path="/products/acquiring/e-commerce" element={<PageTransition><AcquiringECommerce /></PageTransition>} />
+				<Route path="/solutions/banking-api" element={<PageTransition><BankingAPI /></PageTransition>} />
+				<Route path="/solutions/cards-api" element={<PageTransition><CardsAPI /></PageTransition>} />
+				<Route path="/company" element={<PageTransition><Company /></PageTransition>} />
+				<Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+				<Route path="/privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+				<Route path="/terms" element={<PageTransition><TermsConditions /></PageTransition>} />
+				<Route path="/complaints" element={<PageTransition><Complaints /></PageTransition>} />
+				<Route path="/products/acquiring/payment-modules" element={<PageTransition><PaymentModules /></PageTransition>} />
+				<Route path="/solutions/whitelabel/onboarding" element={<PageTransition><WhitelabelOnboarding /></PageTransition>} />
+				<Route path="/solutions/whitelabel/ramp" element={<PageTransition><WhitelabelRamp /></PageTransition>} />
+				<Route path="/solutions/whitelabel/custom" element={<PageTransition><WhitelabelCustom /></PageTransition>} />
+				<Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+			</Routes>
+		</AnimatePresence>
+	);
+}
+
+export default function App() {
+	useViewportScale();
+	return (
+		<Suspense fallback={<PageLoader />}>
+			<AnimatedRoutes />
+		</Suspense>
+	);
+}

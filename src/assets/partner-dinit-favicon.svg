@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-142884bc-d620-4dc6-b5d3-9ffe0c7ea5da" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<defs>
+<style>
+.uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6{fill:#41b6e6;}
+.uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6,.uuid-f026f7fe-c442-4b7e-a335-83e7a5122ce6{stroke-width:0px;}
+.uuid-f026f7fe-c442-4b7e-a335-83e7a5122ce6{fill:#004ea8;}
+@media (prefers-color-scheme: dark) {
+    .uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6{fill:#FFFFFF;}
+    .uuid-f026f7fe-c442-4b7e-a335-83e7a5122ce6{fill:#FFFFFF;}
+}
+</style>
+</defs>
+<path class="uuid-f026f7fe-c442-4b7e-a335-83e7a5122ce6" d="m10,16h-4v-4h4c1.2,0,2-1.01,2-2.52v-3.48c0-1.1-.9-2-2-2h-4V0h4c3.31,0,6,2.69,6,6v3.48c0,3.72-2.58,6.52-6,6.52Z"/><rect class="uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6" x="0" y="0" width="4" height="4"/><rect class="uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6" x="0" y="6" width="4" height="4"/><rect class="uuid-fc87f898-c8b1-4c1e-b6b0-9be632eae6b6" x="0" y="12" width="4" height="4"/></svg>

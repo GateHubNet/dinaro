@@ -1,0 +1,125 @@
+import { useNavigate } from 'react-router-dom';
+import { ctaBg } from '../shared';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { useBreakpoint } from '../hooks/useBreakpoint';
+import '../components/FeaturePage.css';
+import '../components/MobileFeaturePage.css';
+
+import imgVector from '../assets/pm-vector.svg';
+import imgCircle from '../assets/circle-pm.svg';
+
+const heroBg = `linear-gradient(44.5deg, rgb(4,67,82) 0%, rgba(4,67,82,0) 100%), url("data:image/svg+xml,%3Csvg viewBox='0 0 1696 456' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Crect x='0' y='0' height='100%25' width='100%25' fill='url(%23grad)' opacity='1'/%3E%3Cdefs%3E%3CradialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(-30 39.071 -76 -15.423 1148 228.26)'%3E%3Cstop stop-color='rgba(34,132,155,0.2)' offset='0'/%3E%3Cstop stop-color='rgba(34,132,155,0)' offset='1'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E"), linear-gradient(90deg, rgb(4,67,82) 0%, rgb(4,67,82) 100%)`;
+
+const heroBgMobile = `linear-gradient(44.5deg, rgb(4,67,82) 0%, rgba(4,67,82,0) 100%), linear-gradient(90deg, rgb(4,67,82) 0%, rgb(4,67,82) 100%)`;
+
+const modules = [
+  { title: 'Magento',     sub: 'Dinaro Plugin', href: 'https://gate.paywiser.eu/apis/plugins/Magento%20v2.0+' },
+  { title: 'WooCommerce', sub: 'Dinaro Plugin', href: 'https://gate.paywiser.eu/apis/plugins/WooCommerce%20v3.5+' },
+  { title: 'OpenCard',    sub: 'Dinaro Plugin', href: 'https://gate.paywiser.eu/apis/plugins/OpenCart%20v3.0+' },
+  { title: 'PrestShop',   sub: 'Dinaro Plugin', href: 'https://gate.paywiser.eu/apis/plugins/PrestaShop%20v1.7+' },
+];
+
+function ModuleCard({ title, sub, href }) {
+  return (
+    <div className="card pm__module-card">
+      <div className="pm__module-thumb" />
+      <div className="pm__module-footer">
+        <div className="pm__module-info">
+          <p className="pm__module-title">{title}</p>
+          <p className="pm__module-sub">{sub}</p>
+        </div>
+        <button type="button" className="pm__module-btn" onClick={() => window.open(href, '_blank')}>
+          <p className="pm__module-btn-label">Instructions</p>
+          <div className="pm__module-btn-icon-wrap">
+            <img alt="" className="pm__module-btn-icon-bg" src={imgCircle} />
+            <svg className="pm__module-btn-icon-svg" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="9" stroke="#044352" strokeWidth="1.5"/>
+              <path d="M10 9v5" stroke="#044352" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="10" cy="6.5" r="0.75" fill="#044352"/>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function PaymentModules() {
+  const navigate = useNavigate();
+  const bp = useBreakpoint();
+
+  if (bp === 'mobile' || bp === 'tablet') {
+    return (
+      <div className="mobile-page">
+        <Navbar />
+        <div className="mobile-page__hero" style={{ backgroundImage: heroBgMobile }}>
+          <p className="mobile-page__hero-title">Payment Modules</p>
+          <p className="mobile-page__hero-subtitle">Download and integrate Dinaro payment plugins for your e-commerce platform.</p>
+        </div>
+        <div className="pm__mobile-modules">
+          {modules.map(({ title, sub, href }) => (
+            <div key={title} className="card pm__mobile-module-card">
+              <div className="pm__mobile-module-info">
+                <p className="pm__mobile-module-title">{title}</p>
+                <p className="pm__mobile-module-sub">{sub}</p>
+              </div>
+              <button type="button" className="pm__mobile-module-btn" onClick={() => window.open(href, '_blank')}>
+                Instructions
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="mobile-page__cta" style={{ backgroundImage: ctaBg }}>
+          <p className="mobile-page__cta-title">Open your payment account in just a few simple steps.</p>
+          <button type="button" className="mobile-page__cta-btn" onClick={() => navigate('/contact')}>
+            Contact Us
+          </button>
+        </div>
+        <div className="mobile-page__footer">
+          <p className="mobile-page__footer-copy">© 2026 Dinaro. All Rights Reserved.</p>
+          <div className="mobile-page__footer-links">
+            {[
+              { label: 'Terms & Conditions', href: '/terms' },
+              { label: 'Privacy Policy', href: '/privacy-policy' },
+              { label: 'Complaints', href: '/complaints' },
+            ].map(({ label, href }) => (
+              <a key={label} href={href} className="mobile-page__footer-link">{label}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="fp">
+      <Navbar />
+
+      <div className="fp__hero">
+        <div className="fp__hero-bg" style={{ backgroundImage: heroBg }} />
+        <div className="fp__hero-vector-wrap">
+          <img alt="" className="fp__hero-vector" src={imgVector} />
+        </div>
+        <div className="fp__hero-text">
+          <p className="fp__hero-title">Payment Modules</p>
+        </div>
+      </div>
+
+      <div className="pm__modules-grid">
+        {modules.map(({ title, sub, href }) => (
+          <ModuleCard key={title} title={title} sub={sub} href={href} />
+        ))}
+      </div>
+
+      <div className="fp__cta" style={{ backgroundImage: ctaBg }}>
+        <p className="fp__cta-title">Open your payment account in just a few simple steps.</p>
+        <button type="button" className="fp__cta-btn" onClick={() => navigate('/contact')}>
+          <p className="fp__cta-btn-label">Contact Us</p>
+        </button>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
