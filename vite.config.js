@@ -20,6 +20,7 @@ const securityHeaders = {
 
 export default defineConfig({
   plugins: [react()],
+  base: "/dinaro/",
   server: {
     headers: securityHeaders,
   },
