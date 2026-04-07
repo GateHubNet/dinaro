@@ -1,26 +1,26 @@
 {
-  "name": "dinaro-v2",
+  "name": "dinaro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "optimize-svgs": "svgo -r src/assets/ -o src/assets/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrazspolaric/Dinaro-v2.git"
+    "url": "git+https://github.com/GateHubNet/dinaro.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/andrazspolaric/Dinaro-v2/issues"
+    "url": "https://github.com/GateHubNet/dinaro/issues"
   },
-  "homepage": "https://github.com/andrazspolaric/Dinaro-v2#readme",
+  "homepage": "https://github.com/GateHubNet/dinaro#readme",
   "dependencies": {
     "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
