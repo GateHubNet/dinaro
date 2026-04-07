@@ -3,7 +3,7 @@ name: Build and Deploy to Pages
 on:
   workflow_dispatch:
   push:
-    branches: ["main"] # Trigger on pushes to main
+    branches: ["master"] # Trigger on pushes to main
 
 permissions:
   contents: read
