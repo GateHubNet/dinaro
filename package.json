@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp dist/index.html dist/404.html",
-    "preview": "vite preview",
-    "optimize-svgs": "svgo -r src/assets/ -o src/assets/"
+    "preview": "npm run build && wrangler dev",
+    "optimize-svgs": "svgo -r src/assets/ -o src/assets/",
+    "deploy": "npm run build && wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -30,10 +31,12 @@
     "react-router-dom": "^7.13.2"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.31.0",
     "@tailwindcss/vite": "^4.2.2",
     "@vitejs/plugin-react": "^6.0.1",
     "svgo": "^4.0.1",
     "tailwindcss": "^4.2.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "wrangler": "^4.80.0"
   }
 }
