@@ -1040,8 +1040,6 @@
 	gap: 8px;
 	padding-right: 8px;
 	padding-bottom: 48px;
-	scrollbar-width: thin;
-	scrollbar-color: #044352 rgba(4, 67, 82, 0.1);
 	overflow-y: auto;
 }
 
@@ -1091,8 +1089,26 @@
 	overflow-y: auto;
 	padding-right: 16px;
 	padding-bottom: 48px;
-	scrollbar-width: thin;
-	scrollbar-color: #044352 rgba(4, 67, 82, 0.1);
+}
+
+/* Always-visible scroll indicator. The standard scrollbar-width/color props
+   render as auto-hiding overlay scrollbars on macOS, so style the webkit
+   pseudo-elements instead — Chrome/Safari paint these persistently. */
+.terms__sidebar::-webkit-scrollbar,
+.terms__section-body::-webkit-scrollbar {
+	width: 8px;
+}
+
+.terms__sidebar::-webkit-scrollbar-track,
+.terms__section-body::-webkit-scrollbar-track {
+	background: rgba(4, 67, 82, 0.1);
+	border-radius: 4px;
+}
+
+.terms__sidebar::-webkit-scrollbar-thumb,
+.terms__section-body::-webkit-scrollbar-thumb {
+	background: #044352;
+	border-radius: 4px;
 }
 
 /* ── TermsConditions: mobile tabs ── */
