@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
           <p className="mobile-page__hero-title">Privacy Policy</p>
         </div>
         <div
-          className="fp__content-mobile fp__content-mobile-text"
+          className="terms-content fp__content-mobile fp__content-mobile-text"
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <div className="mobile-page__cta" style={{ backgroundImage: ctaBg }}>
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
 
       <div className="fp__content">
         <div
-          className="card fp__content-area fp__content-text"
+          className="card terms-content fp__content-area fp__content-text"
           dangerouslySetInnerHTML={{ __html: html }}
           style={{ overflowY: 'auto', paddingRight: 16, scrollbarWidth: 'thin', scrollbarColor: '#044352 rgba(4,67,82,0.1)' }}
         />

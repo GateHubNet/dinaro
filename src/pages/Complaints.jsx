@@ -3,6 +3,7 @@ import { ctaBg } from '../shared';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useBreakpoint } from '../hooks/useBreakpoint';
+import { useT } from '../i18n/useT';
 import '../components/FeaturePage.css';
 import '../components/MobileFeaturePage.css';
 
@@ -33,72 +34,70 @@ function ContactRow({ label, value }) {
   );
 }
 
+// Some paragraphs carry <strong>/<a> markup straight from the copy deck.
+function HtmlText({ className, html }) {
+  return <p className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 export default function Complaints() {
   const navigate = useNavigate();
   const bp = useBreakpoint();
+  const t = useT();
+  const c = t('complaintsPage');
 
   if (bp === 'mobile' || bp === 'tablet') {
     return (
       <div className="mobile-page">
         <Navbar />
         <div className="mobile-page__hero" style={{ backgroundImage: heroBgMobile }}>
-          <p className="mobile-page__hero-title">Complaints</p>
-          <p className="mobile-page__hero-subtitle">We did not meet your expectation?</p>
+          <p className="mobile-page__hero-title">{c.heroTitle}</p>
+          <p className="mobile-page__hero-subtitle">{c.heroSubtitle}</p>
         </div>
         <div className="complaints__mobile-cards">
           <div className="card complaints__mobile-card">
-            <p className="complaints__mobile-card-title">Submit a Complaint</p>
-            <p className="complaints__mobile-card-text">Please send your complaint to us in writing via one of the following methods:</p>
-            <ContactRow label="By Post" value="Dinaro d.o.o., Complaints Dept., Bravničarjeva ulica 13, 1000 Ljubljana, Slovenia" />
-            <ContactRow label="By Email" value="complaints@dinaro.si" />
+            <p className="complaints__mobile-card-title">{c.mobile.submitTitle}</p>
+            <p className="complaints__mobile-card-text">{c.lead}</p>
+            <ContactRow label={c.byPostLabel} value={c.byPostValue} />
+            <ContactRow label={c.byEmailLabel} value={c.byEmailValue} />
             <p className="complaints__mobile-footnote">
-              The full appeal procedure is described in our{' '}
+              {c.footnotePre}
               <button type="button" onClick={() => navigate('/terms')} className="complaints__terms-link">
-                Terms &amp; Conditions
+                {c.footnoteLink}
               </button>.
             </p>
           </div>
           <div className="card complaints__mobile-card">
-            <p className="complaints__mobile-card-title">How to file a complaint?</p>
-            <p className="complaints__mobile-card-text">We will carefully investigate it and reach out directly via email if we need more information.</p>
-            <p className="complaints__include-label">Please include:</p>
+            <p className="complaints__mobile-card-title">{c.how.heading}</p>
+            <p className="complaints__mobile-card-text">{c.mobile.howText}</p>
+            <p className="complaints__include-label">{c.mobile.includeLabel}</p>
             <div className="complaints__bullet-list">
-              {[
-                'Your name, address, and email address;',
-                'Description of the event and date it occurred;',
-                'Any evidence supporting your claim;',
-                'Your specific claim or request.',
-              ].map(text => <Bullet key={text}>{text}</Bullet>)}
+              {c.mobile.bullets.map(text => <Bullet key={text}>{text}</Bullet>)}
             </div>
           </div>
           <div className="card complaints__mobile-card">
-            <p className="complaints__mobile-card-title">How long does it take?</p>
-            <p className="complaints__mobile-card-text">
-              Payment-related complaints resolved within <strong>15 business days</strong> (PSD2). Up to <strong>35 business days</strong> in complex cases.
-            </p>
+            <p className="complaints__mobile-card-title">{c.mobile.durationTitle}</p>
+            <HtmlText className="complaints__mobile-card-text" html={c.mobile.durationText} />
           </div>
           <div className="card complaints__mobile-card">
-            <p className="complaints__mobile-card-title">Unhappy with the outcome?</p>
-            <p className="complaints__mobile-card-text">
-              File an initiative with Attorney Simona Goriup or contact the supervisory authority: <strong>Banka Slovenije</strong>, Slovenska 35, 1505 Ljubljana.
-            </p>
+            <p className="complaints__mobile-card-title">{c.outcome.heading}</p>
+            <HtmlText className="complaints__mobile-card-text" html={c.mobile.outcomeText} />
           </div>
         </div>
         <div className="mobile-page__cta" style={{ backgroundImage: ctaBg }}>
-          <p className="mobile-page__cta-title">Do you have questions?</p>
+          <p className="mobile-page__cta-title">{t('common.questionsTitle')}</p>
           <button type="button" className="mobile-page__cta-btn" onClick={() => navigate('/contact')}>
-            Contact Us
+            {t('common.contactUs')}
           </button>
         </div>
         <div className="mobile-page__footer">
-          <p className="mobile-page__footer-copy">© 2026 Dinaro. All Rights Reserved.</p>
+          <p className="mobile-page__footer-copy">{t('footer.copyShort')}</p>
           <div className="mobile-page__footer-links">
             {[
-              { label: 'Terms & Conditions', href: '/terms' },
-              { label: 'Privacy Policy', href: '/privacy-policy' },
-              { label: 'Complaints', href: '/complaints' },
+              { label: t('footer.terms'), href: '/terms' },
+              { label: t('footer.privacy'), href: '/privacy-policy' },
+              { label: t('footer.complaints'), href: '/complaints' },
             ].map(({ label, href }) => (
-              <a key={label} href={href} className="mobile-page__footer-link">{label}</a>
+              <a key={href} href={href} className="mobile-page__footer-link">{label}</a>
             ))}
           </div>
         </div>
@@ -116,29 +115,29 @@ export default function Complaints() {
           <img alt="" className="fp__hero-vector" src={imgVector} />
         </div>
         <div className="fp__hero-text">
-          <p className="fp__hero-title">Complaints</p>
+          <p className="fp__hero-title">{c.heroTitle}</p>
         </div>
       </div>
 
       <div className="complaints__content">
         {/* Submit card */}
         <div className="card complaints__card">
-          <p className="complaints__heading">We did not meet your expectation?</p>
-          <p className="complaints__lead">Please send your complaint to us in writing via one of the following methods:</p>
+          <p className="complaints__heading">{c.heroSubtitle}</p>
+          <p className="complaints__lead">{c.lead}</p>
           <div className="complaints__contact-row">
             <div className="complaints__contact-col">
-              <ContactRow label="By Post" value="Dinaro d.o.o., Complaints Dept., Bravničarjeva ulica 13, 1000 Ljubljana, Slovenia" />
+              <ContactRow label={c.byPostLabel} value={c.byPostValue} />
             </div>
             <div className="complaints__contact-col--fixed">
-              <ContactRow label="By Email" value="complaints@dinaro.si" />
+              <ContactRow label={c.byEmailLabel} value={c.byEmailValue} />
             </div>
           </div>
           <p className="complaints__footnote">
-            The full appeal procedure is described in our{' '}
+            {c.footnotePre}
             <button type="button" onClick={() => navigate('/terms')} className="complaints__terms-link">
-              Terms &amp; Conditions
+              {c.footnoteLink}
             </button>.
-			  <br/>Dinaro will process the data included in your complaint to contact you and manage your case.
+            <br/>{c.footnoteData}
           </p>
         </div>
 
@@ -146,54 +145,38 @@ export default function Complaints() {
         <div className="complaints__two-col">
           <div className="complaints__left-col">
             <div className="card complaints__card">
-              <p className="complaints__subheading">How to file a complaint?</p>
-              <p className="complaints__text">We're sorry that you wish to raise a complaint. We will carefully investigate it and reach out directly via email if we need more information.</p>
-              <p className="complaints__text">Our Customer Support will respond as soon as possible and at the latest within the statutory deadline.</p>
-              <p className="complaints__include-label">Please include the following with your complaint:</p>
+              <p className="complaints__subheading">{c.how.heading}</p>
+              <p className="complaints__text">{c.how.p1}</p>
+              <p className="complaints__text">{c.how.p2}</p>
+              <p className="complaints__include-label">{c.how.includeLabel}</p>
               <div className="complaints__bullet-list">
-                <Bullet>Your name, surname, address, e-mail address and telephone number (or title and registered office if a legal entity);</Bullet>
-                <Bullet>Description of the event, key facts, and the date it occurred;</Bullet>
-                <Bullet>Any evidence supporting your claim, if available;</Bullet>
-                <Bullet>Your specific claim or request, if relevant.</Bullet>
+                {c.how.bullets.map(text => <Bullet key={text}>{text}</Bullet>)}
               </div>
-              <p className="complaints__footnote-sm">
-                Requests to rectify payment transaction errors are handled under the General Terms and Conditions of each product or service in force at the time.
-              </p>
+              <p className="complaints__footnote-sm">{c.how.footnote}</p>
             </div>
           </div>
 
           <div className="complaints__right-col">
             <div className="card complaints__card">
-              <p className="complaints__subheading">How long does it take to handle a complaint?</p>
-              <p className="complaints__text">
-                All complaints concerning payment services - such as transfers and card transactions - will be resolved within <strong>15 business days</strong>, per the European Payment Services Directive II (PSD2).
-              </p>
-              <p className="complaints__text">
-                If we need more time to assess your complaint, we will let you know, but we must provide our final response within <strong>35 business days</strong>.
-              </p>
-              <p className="complaints__text">
-                Should we not receive a requested response from you, we may close your complaint. If you contact us again after this, we will open a new file with a new reference number.
-              </p>
+              <p className="complaints__subheading">{c.duration.heading}</p>
+              <HtmlText className="complaints__text" html={c.duration.p1} />
+              <HtmlText className="complaints__text" html={c.duration.p2} />
+              <p className="complaints__text">{c.duration.p3}</p>
             </div>
 
             <div className="card complaints__card">
-              <p className="complaints__subheading">Unhappy with the outcome?</p>
-              <p className="complaints__text">
-                If you are not satisfied with our findings, you can file an initiative for out-of-court settlement of consumer disputes at Attorney Simona Goriup (Miklošičeva cesta 26, 1000 Ljubljana,{' '}
-                <a href="https://www.goriup.si" target="_blank" rel="noopener noreferrer" style={{ color: '#044352' }}>www.goriup.si</a>).
-              </p>
-              <p className="complaints__text">
-                You may also seek further advice from independent third parties or the supervisory authority: <strong>Banka Slovenije, Slovenska 35, 1505 Ljubljana, Slovenia</strong>.
-              </p>
+              <p className="complaints__subheading">{c.outcome.heading}</p>
+              <HtmlText className="complaints__text" html={c.outcome.p1} />
+              <HtmlText className="complaints__text" html={c.outcome.p2} />
             </div>
           </div>
         </div>
       </div>
 
       <div className="fp__cta fp__cta--legal" style={{ backgroundImage: ctaBg }}>
-        <p className="fp__cta-title">Do you have questions?</p>
+        <p className="fp__cta-title">{t('common.questionsTitle')}</p>
         <button type="button" className="fp__cta-btn" onClick={() => navigate('/contact')}>
-          <p className="fp__cta-btn-label">Contact Us</p>
+          <p className="fp__cta-btn-label">{t('common.contactUs')}</p>
         </button>
       </div>
 
