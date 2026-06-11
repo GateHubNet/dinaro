@@ -2,9 +2,9 @@ import { strings } from './strings';
 
 const STORAGE_KEY = 'dinaro_a11y';
 
-// Slovenian is hidden for launch until the SL copy fixes are reviewed.
-// Flip to true to bring the language selector entries and detection back.
-export const SL_ENABLED = false;
+// Flip to false to hide Slovenian: the language selector entries and
+// detection disappear and the site serves English only.
+export const SL_ENABLED = true;
 
 // Resolve the initial language for a fresh page load.
 // Priority:
