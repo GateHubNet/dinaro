@@ -142,14 +142,13 @@ export const strings = {
 				heading: 'Why Choose Dinaro?',
 				cards: [
 					{ title: 'Individual Approach', text: 'Personalized solutions tailored to your needs.' },
-					{ title: 'Secure', text: 'Access worldwide markets through one platform' },
+					{ title: 'Secure', text: 'Payment infrastructure with built-in security and compliance controls.' },
 					{ title: 'Simplicity & Transparency', text: 'Clear processes with no hidden complexities.' },
 					{ title: 'EMI Licence', text: 'Dinaro is a licensed e-money institution regulated by the Bank of Slovenia,' },
 					{ title: 'Global Reach', text: 'Access worldwide markets through one platform.' },
 					{ title: 'PCI DSS Certified', text: 'Dinaro is PCI DSS Level 1 Certified Service Provider' },
 				],
 				cta: 'Get Started Now',
-				body: "Using Mastercard's global network and card products, we enable domestic and cross-border transfers. Offer your cardholders safer, more reliable, and convenient transfers. Or send funds directly to any card in the MoneySend system-in just minutes, 24/7!",
 			},
 			partners: {
 				title: 'Trusted by industry leaders and backed by world-class technology',
@@ -583,14 +582,13 @@ export const strings = {
 				heading: 'Zakaj izbrati Dinaro?',
 				cards: [
 					{ title: 'Individualen pristop', text: 'Rešitve, prilagojene vašim potrebam.' },
-					{ title: 'Varno', text: 'Dostop do svetovnih trgov skozi eno platformo' },
+					{ title: 'Varno', text: 'Plačilna infrastruktura z vgrajenimi varnostnimi in skladnostnimi kontrolami.' },
 					{ title: 'Enostavnost in transparentnost', text: 'Jasen proces brez skritih zapletov.' },
 					{ title: 'EMI licenca', text: 'Dinaro je licencirana ustanova za e-denar pod nadzorom Banke Slovenije,' },
 					{ title: 'Globalni doseg', text: 'Dostop do svetovnih trgov skozi eno platformo.' },
 					{ title: 'PCI DSS certifikat', text: 'Dinaro je certificiran ponudnik PCI DSS stopnje 1' },
 				],
 				cta: 'Začnite zdaj',
-				body: 'Z globalnim omrežjem in karticami Mastercard omogočamo domače in čezmejne prenose. Imetnikom kartic ponudite varnejša, zanesljivejša in udobnejša nakazila. Ali pa pošljite sredstva neposredno na katerokoli kartico v sistemu MoneySend, v nekaj minutah, 24/7!',
 			},
 			partners: {
 				title: 'Zaupajo nam vodilni v industriji, podprti z vrhunsko tehnologijo',
