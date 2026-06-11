@@ -343,15 +343,6 @@ export default function Homepage() {
 					</button>
 				</div>
 
-				<motion.p
-					className="hp__why-body"
-					initial={{ opacity: 0, y: 16 }}
-					whileInView={{ opacity: 0.7, y: 0 }}
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-				>
-					{t('home.why.body')}
-				</motion.p>
 			</div>
 
 			{/* ── Partners ── */}
