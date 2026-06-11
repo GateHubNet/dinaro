@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, MotionConfig } from 'motion/react';
 import PageTransition from './components/PageTransition';
+import PinLock from './components/PinLock'; // remove this line + <PinLock> below to disable
 import AccessibilityToggle, { useA11yState } from './components/AccessibilityToggle';
 import { useT } from './i18n/useT';
 
@@ -111,6 +112,7 @@ export default function App() {
 	}, [a11y.language, t]);
 
 	return (
+		<PinLock> {/* remove this line + closing </PinLock> below to disable */}
 		<MotionConfig reducedMotion={a11y.hideAnimations ? 'always' : 'never'}>
 			<div className="a11y-content-root">
 				<Suspense fallback={<PageLoader />}>
@@ -119,5 +121,6 @@ export default function App() {
 			</div>
 			<AccessibilityToggle />
 		</MotionConfig>
+		</PinLock>
 	);
 }
