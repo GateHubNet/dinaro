@@ -50,7 +50,7 @@ export default function Complaints() {
             <p className="complaints__mobile-card-title">Submit a Complaint</p>
             <p className="complaints__mobile-card-text">Please send your complaint to us in writing via one of the following methods:</p>
             <ContactRow label="By Post" value="Dinaro d.o.o., Complaints Dept., Bravničarjeva ulica 13, 1000 Ljubljana, Slovenia" />
-            <ContactRow label="By Email" value="complaints.eu@dinaro.eu" />
+            <ContactRow label="By Email" value="complaints@dinaro.si" />
             <p className="complaints__mobile-footnote">
               The full appeal procedure is described in our{' '}
               <button type="button" onClick={() => navigate('/terms')} className="complaints__terms-link">
@@ -130,7 +130,7 @@ export default function Complaints() {
               <ContactRow label="By Post" value="Dinaro d.o.o., Complaints Dept., Bravničarjeva ulica 13, 1000 Ljubljana, Slovenia" />
             </div>
             <div className="complaints__contact-col--fixed">
-              <ContactRow label="By Email" value="complaints.eu@dinaro.eu" />
+              <ContactRow label="By Email" value="complaints@dinaro.si" />
             </div>
           </div>
           <p className="complaints__footnote">
