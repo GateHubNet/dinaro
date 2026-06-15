@@ -676,7 +676,7 @@ export const strings = {
 				heroTitle: 'Poslovni račun',
 				heroSubtitle: 'Vse, kar potrebujete za upravljanje denarja, na enem mestu.',
 				features: [
-					{ tag: 'RAČUN', title: 'Poslovni račun', text: 'Vaš poslovni račun ponuja varno in tekočo rešitev s slovenskim IBAN-om za globalno ali lokalno poslovanje.' },
+					{ tag: 'PLAČILNI RAČUN', title: 'Poslovni račun', text: 'Vaš poslovni račun ponuja varno in tekočo rešitev s slovenskim IBAN-om za globalno ali lokalno poslovanje.' },
 					{ tag: 'SEPA', title: 'Plačila', text: 'Podpora SEPA in Instant SEPA prenosom za hitre in varne transakcije v evrih po Evropi.' },
 					{ tag: 'VEČVALUTNO', badge: 'V pripravi', title: 'Podpora več valut', text: 'Upravljajte lokalna in mednarodna plačila v evrih in 20+ glavnih valutah z enega računa. Uporabite FX storitve za konkurenčne tečaje.' },
 				],
