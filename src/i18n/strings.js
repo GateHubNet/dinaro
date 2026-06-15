@@ -693,7 +693,7 @@ export const strings = {
 				heroTitle: 'Osebna debetna kartica',
 				heroSubtitle: 'Vsakdanje rešitve za resnično življenje',
 				features: [
-					{ tag: 'VSAKODNEVNO', title: 'Vsakdanja poraba', text: 'Zasnovana za vaše vsakodnevne potrebe, zanesljiv in priročen način plačevanja v trgovini, na spletu in na poti.' },
+					{ tag: 'NAKUPI', title: 'Vsakdanja poraba', text: 'Zasnovana za vaše vsakodnevne potrebe, zanesljiv in priročen način plačevanja v trgovini, na spletu in na poti.' },
 					{ tag: 'POVEZANO', title: 'Povezana z vašim računom', text: 'Neposredno povezana z vašim plačilnim računom Dinaro, kar vam omogoča takojšen dostop do sredstev, kadarkoli in kjerkoli.' },
 					{ tag: 'MOBILNO', title: 'Mobilna aplikacija', text: 'Upravljajte porabo, nastavite limite in spremljajte transakcije v realnem času prek aplikacije Dinaro, poln nadzor v vaših rokah.' },
 					{ tag: 'BANKOMAT', title: 'Globalni dostop do bankomatov', text: 'Dostopajte do sredstev na partnerskih bankomatih po svetu v lokalnih valutah, da nikoli ne ostanete brez gotovine, ne glede na to, kje ste.' },
