@@ -511,7 +511,7 @@ export const strings = {
 			customers: 'Stranke',
 			partners: 'Partnerji',
 			company: 'Podjetje',
-			contact: 'Stik',
+			contact: 'Kontakt',
 			getStarted: 'Začnite zdaj',
 			openMenu: 'Odpri meni',
 			closeMenu: 'Zapri meni',
@@ -970,11 +970,11 @@ export const strings = {
 			},
 		},
 		contact: {
-			heroTitle: 'Stik',
+			heroTitle: 'Kontakt',
 			heroSubtitleMobile: 'Tu smo, da pomagamo. Pošljite nam sporočilo.',
 			ctaTitle: 'Fintech po meri.',
 			ctaBody: 'Fintech na novo. Ustvarite plačilne račune pod lastno blagovno znamko, izdajte debetne kartice in poslujte globalno, že danes.',
-			contactButton: 'Stik',
+			contactButton: 'Kontakt',
 			viewOnMaps: 'Poglej na zemljevidu',
 			cards: [
 				{ email: 'info@dinaro.si', title: 'Splošne informacije', description: 'Za splošna vprašanja in informacije o naših storitvah.' },
