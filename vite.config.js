@@ -27,6 +27,10 @@ export default defineConfig({
     headers: securityHeaders,
   },
   build: {
+    // Emit every asset as a real file. Vite's default inlines assets < 4 KB as
+    // data: URIs, but inlined SVG data URIs break inside `background-image: url(..)`
+    // (e.g. payment-accounts/individual/3.svg), so small graphics rendered blank.
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         manualChunks: (id) => {
