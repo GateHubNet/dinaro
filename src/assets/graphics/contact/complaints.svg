@@ -1,0 +1,35 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1208">
+<g id="Frame 1206">
+<g id="Sign Checkmark" clip-path="url(#clip0_378_16)">
+<g id="Group">
+<circle id="Ellipse 2" cx="32" cy="32" r="31.5" fill="url(#paint0_linear_378_16)" stroke="#B5CBD1" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Notes,Planner" clip-path="url(#clip1_378_16)">
+<g id="Group_2">
+<g id="Group_3">
+<path id="Vector" d="M26.1058 21.1582H23.7199C22.4017 21.1582 21.334 22.2259 21.334 23.5441V40.2454C21.334 41.5636 22.4017 42.6313 23.7199 42.6313H38.0353C39.3535 42.6313 40.4212 41.5636 40.4212 40.2454V39.0525" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M33.2637 37.8593L37.0215 37.3953C37.2851 37.363 37.5309 37.2426 37.7193 37.0553L43.2439 31.5307C44.2519 30.5227 44.2519 28.8883 43.2439 27.8791C42.2359 26.871 40.6015 26.871 39.5923 27.8791L34.1524 33.3189C33.9699 33.5015 33.8518 33.7377 33.8148 33.9941L33.2637 37.8593Z" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M33.8597 22.948H27.8949C26.9071 22.948 26.1055 22.1463 26.1055 21.1586C26.1055 20.1708 26.9071 19.3691 27.8949 19.3691H33.8597C34.8474 19.3691 35.6491 20.1708 35.6491 21.1586C35.6491 22.1463 34.8474 22.948 33.8597 22.948Z" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M26.1055 27.123H33.2632" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M26.1055 31.8945H30.8773" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M35.6484 21.1582H38.0343C39.3526 21.1582 40.4202 22.2259 40.4202 23.5441" stroke="white" stroke-width="1.34207" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_378_16" x1="7.17577" y1="56.8243" x2="60.3084" y2="3.69166" gradientUnits="userSpaceOnUse">
+<stop stop-color="#004555"/>
+<stop offset="1" stop-color="#97B2B9"/>
+</linearGradient>
+<clipPath id="clip0_378_16">
+<rect width="64" height="64" fill="white"/>
+</clipPath>
+<clipPath id="clip1_378_16">
+<rect width="32" height="32" fill="white" transform="translate(16 16)"/>
+</clipPath>
+</defs>
+</svg>
