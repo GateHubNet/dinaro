@@ -12,7 +12,7 @@
 //     regardless of selected language - those live in
 //     AccessibilityToggle.jsx (LANGUAGES constant), not here.
 
-export const strings = {
+const _rawStrings = {
 	en: {
 		meta: {
 			title: 'Dinaro - Fintech, Your Way!',
@@ -997,3 +997,31 @@ export const strings = {
 		},
 	},
 };
+
+// Image paths in the data above are plain strings (e.g. "/src/assets/graphics/..").
+// Those only resolve in dev; in a production build Vite hashes assets into /assets/
+// and the /src path 404s. Resolve every image string to its real bundled URL here.
+const _assetUrls = import.meta.glob('../assets/graphics/**/*.{svg,png}', {
+	eager: true,
+	query: '?url',
+	import: 'default',
+});
+
+function _resolveAssets(node) {
+	if (typeof node === 'string') {
+		if (node.startsWith('/src/assets/')) {
+			return _assetUrls['..' + node.slice(4)] || node; // "/src/assets/.." -> "../assets/.."
+		}
+		const rel = '../assets/graphics/' + node; // bare relative form, e.g. "homepage/x.svg"
+		return _assetUrls[rel] || node;
+	}
+	if (Array.isArray(node)) return node.map(_resolveAssets);
+	if (node && typeof node === 'object') {
+		const out = {};
+		for (const key in node) out[key] = _resolveAssets(node[key]);
+		return out;
+	}
+	return node;
+}
+
+export const strings = _resolveAssets(_rawStrings);
