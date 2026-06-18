@@ -100,6 +100,6 @@ VITE_ENABLE_ANALYTICS=false
 
 | Branch | Purpose |
 |---|---|
-| `main` | Stable production code |
+| `master` | Stable production code |
 | `animations` | Motion animation implementation |
 | `responsive` | Mobile/tablet responsive layouts |
