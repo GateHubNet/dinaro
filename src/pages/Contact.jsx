@@ -11,6 +11,15 @@ import imgVector from '../assets/contact-vector.svg';
 import imgCircle from '../assets/circle-contact.svg';
 import imgArrowExt from '../assets/arrow-ext.svg';
 
+import iconInfo from '../assets/graphics/contact/info.svg';
+import iconSales from '../assets/graphics/contact/sales.svg';
+import iconSupport from '../assets/graphics/contact/support.svg';
+import iconComplaints from '../assets/graphics/contact/complaints.svg';
+import iconAddress from '../assets/graphics/contact/address.svg';
+
+// Card order matches contact.cards: General info, Sales, Support, Complaints.
+const INFO_ICONS = [iconInfo, iconSales, iconSupport, iconComplaints];
+
 const heroBg = `linear-gradient(44.5deg, rgb(4,67,82) 0%, rgba(4,67,82,0) 100%), url("data:image/svg+xml,%3Csvg viewBox='0 0 1696 456' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Crect x='0' y='0' height='100%25' width='100%25' fill='url(%23grad)' opacity='1'/%3E%3Cdefs%3E%3CradialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(-30 39.071 -76 -15.423 1148 228.26)'%3E%3Cstop stop-color='rgba(34,132,155,0.2)' offset='0'/%3E%3Cstop stop-color='rgba(34,132,155,0)' offset='1'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E"), linear-gradient(90deg, rgb(4,67,82) 0%, rgb(4,67,82) 100%)`;
 
 const heroBgMobile = `linear-gradient(44.5deg, rgb(4,67,82) 0%, rgba(4,67,82,0) 100%), linear-gradient(90deg, rgb(4,67,82) 0%, rgb(4,67,82) 100%)`;
@@ -27,10 +36,13 @@ function PillButton({ label, arrowSrc, onClick }) {
   );
 }
 
-function InfoCard({ title, sub, buttonLabel, arrowSrc, onButtonClick }) {
+function InfoCard({ title, sub, icon, buttonLabel, arrowSrc, onButtonClick }) {
   return (
     <div className="card fp__contact-info-card">
-      <div className="fp__contact-info-icon" />
+      <div
+        className="fp__contact-info-icon"
+        style={icon ? { background: `url(${icon}) center/contain no-repeat`, border: 'none' } : undefined}
+      />
       <div className="fp__contact-info-content">
         <p className="fp__contact-info-title">{title}</p>
         <p className="fp__contact-info-sub">{sub}</p>
@@ -131,11 +143,12 @@ export default function Contact() {
       </div>
 
       <div className="fp__contact-info-row fp__contact-info-row--four">
-        {cards.map(({ email, title, description }) => (
+        {cards.map(({ email, title, description }, i) => (
           <InfoCard
             key={email}
             title={title}
             sub={description}
+            icon={INFO_ICONS[i]}
             buttonLabel={contactButton}
             arrowSrc={imgArrowExt}
             onButtonClick={() => window.location.href = `mailto:${email}`}
@@ -147,6 +160,7 @@ export default function Contact() {
         <InfoCard
           title={address.title}
           sub={address.value}
+          icon={iconAddress}
           buttonLabel={viewOnMaps}
           arrowSrc={imgArrowExt}
           onButtonClick={() => window.open('https://maps.google.com/?q=Bravničarjeva+ulica+13,+1000+Ljubljana', '_blank', 'noopener')}
