@@ -167,7 +167,7 @@ export default function Contact() {
         />
       </div>
 
-      <div className="fp__cta" style={{ backgroundImage: ctaBg }}>
+      <div className="fp__cta fp__cta--centered" style={{ backgroundImage: ctaBg }}>
         <p className="fp__cta-title">{t('contact.ctaTitle')}</p>
         <p style={{ fontFamily: 'var(--font-inter)', fontWeight: 400, fontSize: 18, lineHeight: '28px', color: 'white', opacity: 0.7, textAlign: 'center', width: 675, alignSelf: 'center' }}>{t('contact.ctaBody')}</p>
       </div>
