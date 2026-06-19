@@ -1439,6 +1439,12 @@
 	padding-top: 120px;
 }
 
+/* Vertically center the CTA content (used where there's no button, e.g. Contact). */
+.fp__cta--centered {
+	justify-content: center;
+	padding-top: 0;
+}
+
 /* ── NotFound ── */
 .not-found {
 	background-color: var(--color-white);
