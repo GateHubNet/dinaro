@@ -828,7 +828,7 @@ const _rawStrings = {
 			whyHeading: 'Zakaj izbrati Dinaro',
 			ctaTitle: 'Lansirajte svoj finančni produkt',
 			features: [
-				{ tag: 'LEDGER', title: 'Ledger infrastruktura', text: 'Vse, kar vaše podjetje potrebuje za brezhibno poslovanje – na enem mestu. Od ledgerj-ev do plačil – vse v eni pametni rešitvi.' },
+				{ tag: 'LEDGER', title: 'Ledger infrastruktura', text: 'Vse, kar vaše podjetje potrebuje – od ledgerja do plačil v eni pametni rešitvi.' },
 				{ tag: 'SEPA', title: 'Plačilne poti', text: 'Domača SEPA integracija z vgrajeno podporo za SEPA in SEPA Instant plačila – zanesljiva, skladna in zasnovana za odlično uporabniško izkušnjo.' },
 			],
 			whyCards: [
