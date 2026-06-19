@@ -341,7 +341,7 @@ const _rawStrings = {
 			],
 			whyCards: [
 				{ title: 'Segregated Accounts', text: 'Client funds protected in segregated accounts with partner banks.' },
-				{ title: 'Full Compliance', text: 'Licensed e-money institution regulated by the Bank of Slovenia, authorised to operate across the EEA.' },
+				{ title: 'Full Compliance', text: 'Licensed e-money institution regulated by the Bank of Slovenia, EEA-authorised.' },
 				{ title: 'API-First Technology', text: 'Modern API infrastructure designed for seamless integration and scalability.' },
 				{ title: 'AML & Fraud Prevention', text: 'Comprehensive anti-money laundering and fraud prevention measures built-in.' },
 				{ title: '360° Support', text: 'Complete ecosystem support connecting crucial partners in the payment industry.' },
